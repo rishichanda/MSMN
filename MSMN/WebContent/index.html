@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MSMN</title>
+<style type="text/css">
+td{
+  padding: 10px;
+}
+table{
+	border-style: inset;
+	border-width: 7px;
+}
+body {
+  background-image: url("BG.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: 1920px 1080px;
+}
+
+input[type="submit"]{
+	border: none;
+	background: #404040;
+	color: #ffffff !important;
+	font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+}
+
+input[type="submit"]:hover {
+	color: #404040 !important;
+	font-weight: 700 !important;
+	letter-spacing: 3px;
+	background: none;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.3s ease 0s;
+}
+
+p {
+  color: #404040;
+  font-size: 20px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function validateName(){
+	var x=document.getElementById("name").value;
+	var flag=0;
+	for(var i=0;i<x.length;i++){
+		if((x[i]>='a' && x[i]<='z') || (x[i]>='A' && x[i]<='Z') || x[i]==' '){
+		}
+		else{
+			flag=1;
+			break;
+		}
+	}
+	if(flag==1){
+		alert("Enter a Valid Name.");
+		document.getElementById("name").value="";
+	}
+}
+
+function validateAge() {
+	var x=document.getElementById("age").value;
+	if(x < 0 || x > 120){
+		alert("Enter a Valid Age.");
+		document.getElementById("age").value="";
+	}
+}
+
+function validateCollege(){
+	var x=document.getElementById("college").value;
+	var flag=0;
+	for(var i=0;i<x.length;i++){
+		if((x[i]>='a' && x[i]<='z') || (x[i]>='A' && x[i]<='Z') || x[i]==' '){
+		}
+		else{
+			flag=1;
+			break;
+		}
+	}
+	if(flag==1){
+		alert("Enter a Valid College Name.");
+		document.getElementById("college").value="";
+	}
+}
+
+function validateId() {
+	var x=document.getElementById("id").value;
+	var flag=0;
+	for(var i=0;i<x.length;i++){
+		if(x[i]<'0' || x[i]>'9'){
+			flag=1;
+			break;
+		}
+	}
+	if(flag==1){
+		alert("Enter a Valid Id.");
+		document.getElementById("id").value="";
+	}
+}
+function validateCgpa() {
+	var x=document.getElementById("cgpa").value;
+	if( isNaN(x) || x < 0 || x > 10){
+		alert("Enter a Valid CGPA.");
+		document.getElementById("cgpa").value="";
+	}
+}
+
+</script>
+
+</head>
+<body>
+<h1 align="center">Magic Square of Magic Numbers!!</h1>
+<h2>Description:</h2>
+<p align="justify">A magic square is a square grid filled with distinct positive integers in the range such that each cell   contains a different integer and the sum of the integers in each row, column and diagonal is equal. But in the these problems you have to fill the empty spaces with two digit numbers which are magical(A magical number is one which makes a meaningful number when it is viewed upside-down, e.g : 61-19, 89-68). Make the magic sum in every row and column (exclude diagonals) as 264 such that if all the numbers of the square grid are made upside-down still the square should be meaningful and still sum of rows and columns should be 264.
+</p>
+
+<form action="GetStarted.jsp" method="post" onsubmit="return validateForm()">
+<table align="center">
+<tr>
+<td colspan="2" align="center">
+<div style="font-size: x-large;">Enter Your Details :</div>
+</td>
+</tr>
+
+<tr>
+<td>Name :</td>
+<td><input type="text" name="uname" id="name" onchange="validateName()" required="required"></td>
+</tr>
+
+<tr>
+<td>Age :</td>
+<td><input type="number" name="uage" id="age" onchange="validateAge()" required="required"></td>
+</tr>
+
+<tr>
+<td>College :</td>
+<td><input type="text" name="ucollege" id="college" onchange="validateCollege()" required="required"></td>
+</tr>
+
+<tr>
+<td>ID No. :</td>
+<td><input type="text" name="uid" id="id" onchange="validateId()" required="required"></td>
+</tr>
+
+<tr>
+<td>CGPA :</td>
+<td><input type="text" name="ucgpa" id="cgpa" onchange="validateCgpa()" required="required"></td>
+</tr>
+
+<tr>
+<td colspan="2" align="right"><input type="submit" value="Submit" id="subbut" required="required"></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
