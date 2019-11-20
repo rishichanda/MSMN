@@ -11,6 +11,6 @@
   </welcome-file-list>
   <context-param>  
     <param-name>filepath</param-name>  
-    <param-value>C:\\Users\\Rishi\\eclipse-workspace\\MSMN\\WebContent\\patterns.txt</param-value>  
+    <param-value>WebContent\\patterns.txt</param-value>  
   </context-param>  
 </web-app>
